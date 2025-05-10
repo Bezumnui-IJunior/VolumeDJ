@@ -33,6 +33,10 @@ public class VolumeSlider : MonoBehaviour
             _mixer.SetVolume(NormalizeSound(volume));
     }
 
-    private float NormalizeSound(float volume) =>
-        Mathf.Log10(volume) * 20;
+    private float NormalizeSound(float volume)
+    {
+        const float Factor = 20;
+        
+        return Mathf.Log10(volume) * Factor;
+    }
 }
